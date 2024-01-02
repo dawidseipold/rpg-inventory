@@ -53,25 +53,28 @@ int main() {
       break;
     }
 
-    case 2:
+    case 2: {
       std::cout << "\nCurrent Inventory:\n";
       playerInventory.displayInventory();
 
       break;
+    }
 
-    case 3:
+    case 3: {
       std::cout << "\nSorting by worth:\n";
       playerInventory.sortItemsByWorth();
       playerInventory.displayInventory();
 
       break;
+    }
 
-    case 4:
+    case 4: {
       std::cout << "\nSorting by weight:\n";
       playerInventory.sortItemsByWeight();
       playerInventory.displayInventory();
 
       break;
+    }
 
     case 0:
       std::cout << "Exiting program.\n";
@@ -82,3 +85,4 @@ int main() {
       std::cout << "Invalid choice. Please try again.\n";
     }
   }
+}
