@@ -5,22 +5,20 @@
 #include <iostream>
 #include <vector>
 
-struct Item {
-    int id;
-    std::string name;
-    int worth;
-    float weight;
-};
+#include "item.h"
 
 class Inventory {
 private:
-    std::vector<Item> items;
+  std::vector<Item> items;
 
 public:
-    void addItem(const Item &newItem);
-    void sortItemsByWorth();
-    void sortItemsByWeight();
-    void displayInventory();
+  void addItem(const Item &newItem);
+  void sortItemsByWorth();
+  void sortItemsByWeight();
+  void displayInventory();
+
+  const std::vector<Item> &getItems();
+  Item *findItemById(int id);
 };
 
 #endif // RPG_INVENTORY_H
