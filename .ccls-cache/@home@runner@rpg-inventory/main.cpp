@@ -21,18 +21,8 @@ int main() {
     std::cout << "5. Sort by Weight\n";
     std::cout << "6. Sort by Rarity\n";
     std::cout << "0. Exit\n";
-    std::cout << "Enter your choice: ";
 
-    int choice;
-    std::cin >> choice;
-
-    // Check for invalid input
-    if (std::cin.fail()) {
-      std::cin.clear();
-
-      // Discard invalid input
-      std::cin.ignore(std::numeric_limits<std::streamsize>::max());
-    }
+    int choice = getValidInput<int>("Enter your choice: ");
 
     switch (choice) {
     case 1: {
@@ -51,10 +41,8 @@ int main() {
     }
 
     case 2: {
-      int id;
-
-      std::cout << "\nPick an ID of an item you want to remove:\n";
-      std::cin >> id;
+      int id = getValidInput<int>(
+          "\nEnter ID of an item that you want to remove:\n");
 
       playerInventory.removeItem(id);
 
